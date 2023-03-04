@@ -28,5 +28,11 @@ data class MatrixFrame(val pixels: List<MatrixPixel>, val width: Int) {
 
     fun getPixelColor(x: Int, y: Int, def: Color) = getPixelColor(x to y, def)
 
+    companion object {
+
+        val emptyFrame by lazy { MatrixFrame(emptyList(), 41) }
+
+    }
+
 }
 
