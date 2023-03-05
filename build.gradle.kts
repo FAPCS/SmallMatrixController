@@ -31,6 +31,8 @@ tasks {
     }
 
     shadowJar {
+        dependsOn("distTar", "distZip", "startScripts")
+
         archiveClassifier.set("")
     }
 }
