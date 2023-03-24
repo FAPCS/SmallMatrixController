@@ -30,9 +30,15 @@ data class MatrixFrame(val pixels: List<MatrixPixel>, val width: Int) {
 
     companion object {
 
-        val emptyFrame by lazy { MatrixFrame(emptyList(), 41) }
+        val emptyFrame by lazy {
+            MatrixFrame(
+                (0 until 41).flatMap { x ->
+                    (0 until 5).map { y -> MatrixPixel(x to y, Color.BLACK) }
+                },
+                41
+            )
+        }
 
     }
 
 }
-
